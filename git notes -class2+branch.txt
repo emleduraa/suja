@@ -1,0 +1,297 @@
+GIT/GITHUB
+Source Code management(SCM) tool / version control tool    - github /git lab/bit bucket
+-> it is a DISTRIBUTED centralised system 
+-> It is used to store the code 
+-> it is used to track the modification to source code repository 
+-> it used to maintain the verision code ( each commit from the developer will be an version)
+-> mutliple users are did modification on same code code confict or merge the code 
+   it resolve the merge conflict which is from differnt distributors
+--> it tracks the changes 
+-> it keep snapshot(back up)
+
+
+REMOTE:
+WORKING DIRECTORY
+REPOSITORY
+MASTER/MAIN
+BRANCH
+
+
+
+step1 : github account (distrubuted - repository)- remote - everyone can access
+
+step2 : i will install gitbash   - local machine - working repository  
+
+clone github account and localmachin(git bash)
+
+   
+======================================================
+
+there 3 places 
+1) working directory  ( it is a place developer will keep the code ) - untracked area 
+2) staging area ( here the code / files will be tracked/ every commit will be tracked)
+
+git add filename
+git status
+
+3)  commit area  ( here all the changes will considered as final commit ) we can move 
+    files from commit area to github 
+	
+git commit -m "user comment"
+git log
+
+will move code from commit area to git hub 
+
+git push
+
+***************************************************************
+create a repository in github(project1) ->add README.md, public --> code -> https -> copy link
+git bash 
+**************git clone repositoryhttpslink 
+cd rempository name
+
+cd project1
+-------------------------------------------------------
+task1 :  file to promote to git hub 
+cat > file1
+
+ls
+
+ls -al  
+      /.git   this will have all git operation  
+git status 
+git add file1
+git status 
+
+
+git commit -m "added file1"
+git log       ---> git log will maintain git commit id as version with that we can revert back old changes
+
+
+note:  git config --global user.email "emailofgitgub"
+       git config --global user.name  "githubusername"
+
+git push  
+      check the file is pushed in git hub account
+================================================================  
+
+cat > file123
+
+git add file123
+git status
+git commit -m "file123 added"
+git log
+
+git push 
+=====================================================
+task2:  push all the files or working directory all the files to github
+
+touch f1 f2 f3 simple
+git add .     -> . represents current working directory 
+git status
+git commit -m "all the files task"
+git log
+git push 
+
+===============================================================
+task3:   push the directory incluing files in a directy
+mkdir dir1
+cd dir1
+touch test1 test2 test3 test4
+cd ..
+git add dir1
+git commit -m "task for dir"
+git push
+============================================================
+1)file/program to local machine to git hub reposiry 
+2) multiple files from working directory to repository
+3) all the files from working directory to repository 
+4) directory from working directory to repository
+************************************************
+=>task5: from git hub to working directory
+
+note: create file github using "add file"  commit the changes
+
+check local git bash (git status)
+git pull
+git status
+------------------------------------------------------------
+conflict / code conflict 
+
+debitprogram 
+  (at period of time)
+   developer1 -> taken existing code(10) --> added 5 lines
+    
+   developer2  -> existing code(10) + in that 10 line of code
+      
+	  dev1 - push -->afterthat dev2 push the code (code conflict)
+	  
+	  at last how many lines of code will be final product 10+5+10 
+
+-> do some changes  in git repository file 
+
+and also do some other changes in same file in local machine(git bash)
+
+git add .
+git commit -m "dev1 had changes"
+git push 
+
+  its throghing an error with code conflict 
+git pull
+then check vi file
+  delete the lines / modify accounting client request 
+
+git add .
+git commit -m "conflict solved"
+git push
+---------------------------------------------------------------------
+task: restore from staging area 
+touch q1 q2 q3
+git add .
+git status
+  --> now i realised by mistakenly added wrong file which is q3 
+  
+i need to remove from staging area then commit and push
+
+
+git restore --staged q3
+git status
+git commit
+git push
+
+-------------------------------------------------------------
+reset log 
+
+
+git log 
+
+taken any old verversion of log
+
+git reset --hard logid
+
+the task is reset 
+
+git pull
+git add
+git commit 
+git push
+
+
+git show commitid
+
+---------------------------------------------------
+delete a file from repository
+
+git rm filename
+
+git add .
+git commit 
+git push
+
+-----------------------------------------
+
+git push -f   --> forcrfully pushed 
+
+
+============================================================
+
+Branch in Git Repository :
+
+in general MAIN / Master branch is the default branch.
+main branch contains final application / final program / final project 
+so that we will not work with main branch directly  / if u do any thing in main branch it will effect the 
+production 
+
+--> according to the task wise will crate a branch and will work in the branch 
+   --> once the branch inside objects/elements/ programs finalised and reviewed then will merge/ intergrate 
+   to main branch
+
+               MAIN
+                    final programs 			   
+			      --> example
+				         i will work on it if final product then i iwll promote to main 
+				  --> feature
+				  
+git push    --> it will promote elements from git bash --> repository MAIN "branch"
+
+git branch 
+git branch -a
+git brach example
+git branch 
+git checkout example 
+touch file12345
+git add file12345
+git commit -m "fileadde from example"
+
+   git checkout main 
+   git push origin example
+  ============================================
+git diff example     -> this command should try at main (git checkout main)
+git merge exmaple
+
+once we done go to repository check "pull REquest"  merge confirm  -> the branch programs will be
+promoted to MAIN branch 
+
+
+git branch --merged main
+
+go to got repository and raise pull request and review it then approve 
+
+then reflect to MAIN .
+
+================================================
+delete a branch 
+1) delete a branch in local machine and delete manually from repository 
+     git branch -D feature 
+	     deleted manually -> git hub -> branches --> delete 
+2) delete a branch in local and delete repository branch from local
+
+   git branch -D example
+   git push origin --delete example  --> this is used to delete from local to repository
+
+==================================================
+
+
+git stash
+git tags
+
+  git --> jenkins
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
